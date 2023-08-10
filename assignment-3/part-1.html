@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>part-1</title>
+    <style>
+
+    button {
+        margin-top: 15px;
+        height: 50px;
+        border-radius: 10%;
+        width: 200px;
+        font-weight: bold;
+        font-size: 20px;
+        box-shadow: 2px 3px 3px 1px black;
+    }
+    </style>
+</head>
+<body>
+    
+<h1>Curren Url :</h1>
+<button onclick="getUrl()">Get curren url</button>
+<h4 id="current-url"></h4>
+<button onclick="openWindow()">Open New Window</button>
+
+</body>
+<script>
+    function getUrl(){
+        // location is a window object method(BOM)
+        let current_url = window.location.href; // href property used to get the current url of the page
+        document.getElementById('current-url').innerText = current_url; // getElementbyId gives single element with mention id if we have 2 elements with the same id(we don't do that) will give first element
+    }
+
+    function openWindow(){
+        // open method open the new window or tab according to our browser settings // _blank open in new tab or window
+        window.open('https://www.w3schools.com/js/','_blank',['height=400px','width=500px'])
+    }
+</script>
+</html>

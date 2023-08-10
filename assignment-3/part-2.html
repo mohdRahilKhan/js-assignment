@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>part-2</title>
+</head>
+<style>
+
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    #myDiv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        width: 100%;
+        background-color: red;
+    }
+
+    p {
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    button {
+        margin-top: 15px;
+        height: 50px;
+        border-radius: 10%;
+        width: 200px;
+        font-weight: bold;
+        font-size: 20px;
+        box-shadow: 2px 3px 3px 1px black;
+    }
+</style>
+<body>
+    <div id="myDiv">
+        <p>Click the button to change the background color</p>
+        <button onclick="changeBg()">Change Color</button>
+    </div>
+</body>
+<script>
+
+    function changeBg(){
+        let ele = document.getElementById('myDiv');
+
+        // style property give access to change styling
+        let color = ele.style.backgroundColor;
+
+        // === for strict checking (value + datatype)
+        if(color === 'red')
+        ele.style.backgroundColor = 'blue';
+
+        else
+        ele.style.backgroundColor = 'red';
+    }
+
+</script>
+</html>

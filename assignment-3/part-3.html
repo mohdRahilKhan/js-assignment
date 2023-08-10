@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>part-3</title>
+</head>
+<body>
+    <ul id="myList"></ul>
+    <button onclick="addItem()">Add Item</button>
+    <button onclick="removeItem()">Remove First Item</button>
+</body>
+<script>
+
+    let parent_element = document.getElementById('myList');
+
+    function addItem(){
+        let item = prompt('Enter an item');
+            // create a text node or content which will apend later in an element
+            item = document.createTextNode(item);
+            // create a element 
+        let new_child = document.createElement('li');
+        new_child.appendChild(item);
+        // appending newly created element in a parent element
+            parent_element.appendChild(new_child);
+    }
+
+    function removeItem(){
+        let first_child = parent_element.firstElementChild;
+        // checking is parent element not empty
+        if(first_child !== null)
+        // if it has than removing child element
+            parent_element.removeChild(first_child);
+    }
+
+</script>
+</html>
